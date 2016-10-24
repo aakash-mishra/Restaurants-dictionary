@@ -1,0 +1,42 @@
+<head>
+<script type="text/javascript">
+function validate()
+{
+var name=document.getElementById('name').value;
+var letters = /^[A-Za-z]+$/;
+if(!name.match(letters))
+{
+alert('You can only enter letters in the name field.');
+return false;
+}
+else
+return true;
+}
+</script>
+</head>
+
+<div class="container">
+<h2>Write A feedback</h2>
+      
+        <form method="post" onclick="return validate()" action="feedback_database.php">
+		<div class="form-group">
+          <p>
+            <input type="text" name="name" id="name" value="" size="22" autofocus required</>
+            <label for="name"><small>Name (required)</small></label>
+          </p>
+          <p>
+            <input type="email" name="email" id="email" value="" size="22" required</>
+            <label for="email"><small>Mail (required)</small></label>
+          </p>
+          <p>
+            <textarea name="review" id="review" cols="100%" rows="10" required</textarea>
+            <label for="review" style="display:none;"><small>Review</small></label>
+          </p>
+          <p>
+            <input name="submit" type="submit" id="submit" value="Submit" />
+            <input name="reset" type="reset" id="reset" tabindex="5" value="Reset" />
+          </p>
+		  </div>
+        </form>
+      
+    </div>
